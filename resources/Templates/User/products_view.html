@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LearnVern Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <style>
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-inline .form-control {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -5px;
+            margin-left: -5px;
+        }
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">LearnVern Store</a>
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="cart.html" class="nav-link" style="margin-right: 15px">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    Cart</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 10px">
+                    My Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Login</a></li>
+                    <li><a class="dropdown-item" href="#">Admin</a></li>
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With LearnVern Store</p>
+        </div>
+    </div>
+</header>
+<!-- Filters-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="card box" style="width: 75rem;">
+            <h5 class="card-header">FILTER BY</h5>
+            <div class="card-body">
+                <form name="search_by_detail" method="post" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group col-md m-1">
+                            <label><b>Gender:</b></label>
+                            <select class="form-select" name="gender" id="gender" aria-label="gender filter">
+                                <option selected disabled>Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="children">Children</option>
+                                <option value="children">Unisex</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md m-1">
+                            <label><b>Price:</b></label>
+                            <select class="form-select" name="price" id="price" aria-label="price filter">
+                                <option selected disabled>Select</option>
+                                <option value="less_than_1500">Less than ₹1500</option>
+                                <option value="between_1500_5k">₹1500 - ₹5000</option>
+                                <option value="between_5k_10k">₹5000 - ₹10,000</option>
+                                <option value="between_10k_30k">₹10,000 - ₹30,000</option>
+                                <option value="greater_than_30k">More than ₹30,000</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md m-1">
+                            <label><b>Color:</b></label>
+                            <select class="form-select" name="color" id="color" aria-label="color filter">
+                                <option selected disabled>Select</option>
+                                <option value="gold">Gold</option>
+                                <option value="rose_gold">Rose Gold</option>
+                                <option value="silver">Silver</option>
+                                <option value="black">Black</option>
+                                <option value="beige">Beige</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md m-1">
+                            <label><b>Function:</b></label>
+                            <select class="form-select" name="function" id="function" aria-label="function filter">
+                                <option selected disabled>Select</option>
+                                <option value="analog">Analog</option>
+                                <option value="automatic">Automatic</option>
+                                <option value="mechanical">Mechanical</option>
+                                <option value="smart">Smart</option>
+                                <option value="digital">Digital</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md m-1">
+                            <label><b>Brand:</b></label>
+                            <select class="form-select" name="brand" id="brand" aria-label="brand filter">
+                                <option selected disabled>Select</option>
+                                <option value="tag_heuer">Tag Heuer</option>
+                                <option value="casio">Casio</option>
+                                <option value="fossil">Fossil</option>
+                                <option value="titan">Titan</option>
+                                <option value="rolex">Rolex</option>
+                                <option value="apple">Apple</option>
+                                <option value="cartier">Cartier</option>
+                                <option value="omega">Omega</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="roadster">Roadster</option>
+                                <option value="daniel_wellington">Daniel Wellington</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md m-1">
+                            <label><b>Sort By:</b></label>
+                            <select class="form-select" name="sort_by" id="sort_by" aria-label="sort filter">
+                                <option selected disabled>Select</option>
+                                <option value="lower_to_higher">Price Lower to Higher</option>
+                                <option value="higher_to_lower">Price Higher to Lower</option>
+                                <option value="model_a_z">Model (A-Z)</option>
+                                <option value="model_z_a">Model (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <input type="submit" class="btn btn-success btn-sm" name="search" value="Search" id="search"
+                               style="width:8rem;color: #ffffff">
+                        <input type="reset" class="btn btn-warning btn-sm" name="reset_filters" value="Clear Filters" id="reset_filters"
+                               style="width:8rem;color: #ffffff">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-2">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Fancy Product</h5>
+                            <!-- Product price-->
+                            ₹40.00 - ₹80.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                    </div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Special Item</h5>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through">₹20.00</span>
+                            ₹18.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                    </div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Sale Item</h5>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through">₹50.00</span>
+                            ₹25.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Popular Item</h5>
+                            <!-- Product price-->
+                            ₹40.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                    </div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Sale Item</h5>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through">₹50.00</span>
+                            ₹25.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Fancy Product</h5>
+                            <!-- Product price-->
+                            ₹120.00 - ₹280.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                    </div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Special Item</h5>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through">₹20.00</span>
+                            ₹18.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Popular Item</h5>
+                            <!-- Product price-->
+                            ₹40.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product_info.html">View Product</a></div>
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="pagination ">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</section>
+<!------ Store Locator ------->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.957106553375!2d72.55422921489071!3d23.025347084951655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f9f38dec53%3A0xf88c617eb48b0674!2sChimanlal%20Girdharlal%20Rd%2C%20Ellisbridge%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1647644630959!5m2!1sen!2sin"
+                    width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="col-md-6 float-end">
+                <h3>LearnVern Store</h3>
+                <hr>
+                <table class="table table-borderless table-condensed">
+                    <tbody>
+                    <tr>
+                        <td style="width: 16.66%"><i class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp;Mobile</td>
+                        <td style="width: 2.66%">:</td>
+                        <td><a href="http://wa.me/8849004643" target="_blank" style="color: black;">+91-1234567891</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Email</td>
+                        <td>:</td>
+                        <td><a href="mailto:info@learnvern.com"
+                               style="color: black;">info@test.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Address</td>
+                        <td>:</td>
+                        <td>LearnVern Store, <br>
+                            1001 ABC Complex, <br>
+                            Chimanlal Girdharlal Rd, <br>
+                            Ahmedabad, Gujarat, <br>
+                            INDIA 380001
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; LearnVern Store 2022</p></div>
+</footer>
+</body>
+</html>
