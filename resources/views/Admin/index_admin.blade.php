@@ -40,7 +40,7 @@
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-danger text-white px-5">
                     <div class="card-body bg-white text-black rounded fw-bold ">Total Sales Amount</div>
-                    <div class="card-body rounded-circle bg-white text-black pt-5 pb-5 m-3 text-center"><h1>{{$totalSaleAmounts}}</h1></div>
+                    <div class="card-body rounded-circle bg-white text-black pt-5 pb-5 m-3 text-center"><h2>{{$totalSaleAmounts}}</h2></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="#">View Details</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
